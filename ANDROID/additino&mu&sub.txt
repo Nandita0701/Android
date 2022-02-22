@@ -1,0 +1,152 @@
+main activity.java
+package com.example.klu.myapplication;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+    EditText e1,e2;
+    Button b1,b2,b3,b4;
+    int a,b,c;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        addition();
+        subtraction();
+        multiply();
+        division();
+    }
+    public void addition() {
+        e1 = (EditText) findViewById(R.id.editText);
+        e2 = (EditText) findViewById(R.id.editText2);
+        a = Integer.parseInt(e1.getText().toString());
+        b = Integer.parseInt(e2.getText().toString());
+        b1 = (Button) findViewById(R.id.button);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                c = a + b;
+                Toast.makeText(getApplicationContext(), String.valueOf(c), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+    public void subtraction() {
+        e1 = (EditText) findViewById(R.id.editText);
+        e2 = (EditText) findViewById(R.id.editText2);
+        a = Integer.parseInt(e1.getText().toString());
+        b = Integer.parseInt(e2.getText().toString());
+        b2 = (Button) findViewById(R.id.button);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                c = a - b;
+                Toast.makeText(getApplicationContext(), String.valueOf(c), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+    public void multiply() {
+        e1 = (EditText) findViewById(R.id.editText);
+        e2 = (EditText) findViewById(R.id.editText2);
+        a = Integer.parseInt(e1.getText().toString());
+        b = Integer.parseInt(e2.getText().toString());
+        b3 = (Button) findViewById(R.id.button);
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                c = a * b;
+                Toast.makeText(getApplicationContext(), String.valueOf(c), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+    public void division(){
+        e1 = (EditText) findViewById(R.id.editText);
+        e2 = (EditText) findViewById(R.id.editText2);
+        a = Integer.parseInt(e1.getText().toString());
+        b = Integer.parseInt(e2.getText().toString());
+        b4 = (Button) findViewById(R.id.button);
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                c=a/b;
+                Toast.makeText(getApplicationContext(),String.valueOf(c),Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+}
+
+
+
+
+
+xml code;
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="125dp"
+        android:text="Add" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="172dp"
+        android:text="Subtract" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="95dp"
+        android:text="Multiply" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/button"
+        android:layout_marginBottom="22dp"
+        android:text="Division" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Number1" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="119dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+</RelativeLayout>
